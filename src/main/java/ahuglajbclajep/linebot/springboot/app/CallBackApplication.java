@@ -12,9 +12,9 @@ import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 
 @SpringBootApplication
 @LineMessageHandler
-public class MutukibotApplication {
+public class CallBackApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(MutukibotApplication.class, args);
+		SpringApplication.run(CallBackApplication.class, args);
 	}
 
 	@EventMapping
