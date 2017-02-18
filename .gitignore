@@ -1,4 +1,4 @@
-src/main/java/resources/application.properties
+src/main/resources/*
 settings.gradle
 
 ### Gradle ###
