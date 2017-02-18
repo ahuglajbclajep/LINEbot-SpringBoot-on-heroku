@@ -1,5 +1,5 @@
 {
-  "name": "mutuki bot - LINE Messaging API",
+  "name": "chat bot - LINE Messaging API",
   "description": "This is a chatbot application with the LINE Messaging API",
   "env": {
     "LINE_BOT_CHANNEL_TOKEN": {

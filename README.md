@@ -2,10 +2,10 @@
 heroku上で動くLINEのbotアカウントの中身
 
 ## Description
-[これ](https://github.com/ahuglajbclajep/LINEbot-on-heroku)の
-[Spring-Boot](https://projects.spring.io/spring-boot/)&
-[LINE Messaging API](https://github.com/line/line-bot-sdk-java)&
-[Gradle](https://gradle.org/)版
+[これ](https://github.com/ahuglajbclajep/LINEbot-on-heroku) の
+[Spring-Boot](https://projects.spring.io/spring-boot/) &
+[LINE Messaging API](https://github.com/line/line-bot-sdk-java) &
+[Gradle](https://gradle.org/) 版
 
 ## Install
 ### Create bot account
