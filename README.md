@@ -13,12 +13,18 @@ heroku上で動くLINEのbotアカウントの中身
 細かな手順は割愛、一番面倒なとこ
 
 ### Deploy to Heroku
-下のボタンを押し、[ここ](https://github.com/line/line-bot-sdk-java/blob/master/sample-spring-boot-echo/README.md)を参考に設定する
+下のボタンを押し、[ここ](https://github.com/line/line-bot-sdk-java/blob/master/sample-spring-boot-echo/README.md)を参考に設定  
+**App Name は必ず設定すること**
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ahuglajbclajep/LINEbot-SpringBoot-on-heroku)
 
 ## Examples Of Command
-順次追加予定
+### @qr [string]
+```
+@qr https://github.com/ahuglajbclajep/LINEbot-on-heroku
+```
+QRコードを生成する  
+他のコマンドで作ったURLを共有するのにも使える
 
 ### @wol [question]
 ```
@@ -30,7 +36,6 @@ heroku上で動くLINEのbotアカウントの中身
 その他画像やスタンプにも反応します
 
 ## Future Releases
-* QRコードを生成する`@qr`コマンドの実装
 * 指定したタイムゾーンの現在時刻を返す`@time`コマンドの実装
 * 発言をランダムにする
 

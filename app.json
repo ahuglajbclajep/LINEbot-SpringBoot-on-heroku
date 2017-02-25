@@ -1,7 +1,11 @@
 {
-  "name": "chat bot - LINE Messaging API",
-  "description": "This is a chatbot application with the LINE Messaging API",
+  "name": "mutukibot - LINE Messaging API",
+  "description": "This is a chatbot application with the LINE Messaging API, required 'App Name'",
   "env": {
+    "APP_NAME": {
+      "description": "Your 'App Name'",
+      "required":  true
+    },
     "LINE_BOT_CHANNEL_TOKEN": {
       "description": "LINE bot Channel access token from the Channel Console",
       "required":  true
