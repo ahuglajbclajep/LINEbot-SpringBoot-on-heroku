@@ -19,17 +19,17 @@ import java.nio.file.Paths;
 @RequestMapping("/tmp")
 public class SendPicture {
 
-    @RequestMapping(value="/{id}", method=RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity<byte[]> hello(@PathVariable String id) {
-        byte[] image;
-        try {
-            Path path = Paths.get("/tmp",id + ".jpg");
-            System.out.println(path.toString());
-            image = Files.readAllBytes(path);
+	@RequestMapping(value="/{id}", method=RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
+	public ResponseEntity<byte[]> hello(@PathVariable String id) {
+		byte[] image;
+		try {
+			Path path = Paths.get("/tmp",id + ".jpg");
+			System.out.println(path.toString());
+			image = Files.readAllBytes(path);
 
-        } catch (InvalidPathException | IOException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return ResponseEntity.ok(image);
-    }
+		} catch (InvalidPathException | IOException e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return ResponseEntity.ok(image);
+	}
 }
