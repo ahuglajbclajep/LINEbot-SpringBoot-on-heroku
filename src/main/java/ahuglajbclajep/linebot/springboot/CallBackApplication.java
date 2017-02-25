@@ -1,4 +1,4 @@
-package ahuglajbclajep.linebot.springboot.app;
+package ahuglajbclajep.linebot.springboot;
 
 import com.linecorp.bot.client.LineMessagingServiceBuilder;
 import com.linecorp.bot.model.ReplyMessage;
@@ -78,8 +78,6 @@ public class CallBackApplication {
 	private void execute(ReplyMessage replyMessage) {
 		try {
 			LineMessagingServiceBuilder.create(System.getenv("LINE_BOT_CHANNEL_TOKEN")).build().replyMessage(replyMessage).execute();
-		} catch (IOException e) {
-			// void
-		}
+		} catch (IOException e) {}
 	}
 }
