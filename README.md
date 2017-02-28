@@ -9,7 +9,7 @@ heroku上で動くLINEのbotアカウントの中身
 
 ## Install
 ### Create bot account
-[ここ](https://business.line.me/ja/services/bot)で作る   
+[ここ](https://business.line.me/ja/services/bot)で作る  
 細かな手順は割愛、一番面倒なとこ
 
 ### Deploy to Heroku
@@ -29,15 +29,23 @@ QRコードを生成する
 ### @wol [question]
 ```
 @wol graph Mickey Mouse curve
-```  
+```
 [WolframAlpha](http://www.wolframalpha.com)で検索する  
 計算したり天気聞いたり
+
+### @time [timeZoneID]
+```
+@time Europe/Paris
+```
+指定したタイムゾーンの現在時刻を教えてくれる  
+引数がないか無効な場合[タイムゾーンの一覧](https://gist.githubusercontent.com/ahuglajbclajep/12899902e4e5331a84fa4fb19796d9fc/raw/20497ec3067437354cffc8a2e8c70710a7c1a5e9/ID.txt)を返す  
+~~`@wol time paris`~~
 
 その他画像やスタンプにも反応します
 
 ## Future Releases
-* 指定したタイムゾーンの現在時刻を返す`@time`コマンドの実装
 * 発言をランダムにする
+* 利用可能なコマンドの一覧を返す `@help` コマンドの実装
 
 ## Contribution
 1. Fork it  
