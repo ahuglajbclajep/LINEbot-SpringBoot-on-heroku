@@ -1,5 +1,6 @@
 package ahuglajbclajep.linebot.springboot;
 
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
@@ -28,9 +29,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.time.DateTimeException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
+
 
 @SpringBootApplication
 @LineMessageHandler
@@ -47,26 +53,36 @@ public class CallBackApplication {
 		String[] args = event.getMessage().getText().split(" ", 2);
 
 		if ("@qr".equals(args[0])) {
-			reply.add(new TextMessage("えへへ、どうぞです♪"));
-
+			reply.add(new TextMessage("よぉーし、頑張るにゃ！"));
 			try {
 				String qr = createQR(args[1], event.getMessage().getId());
 
-				StringBuffer urlbuff = new StringBuffer("https://")
+				String url = new StringBuffer("https://")
 						.append(System.getenv("APP_NAME"))
 						.append(".herokuapp.com")
-						.append(qr);
-				String url = urlbuff.toString();
-
+						.append(qr)
+						.toString();
 				reply.add(new ImageMessage(url, url));
 
 			} catch (ArrayIndexOutOfBoundsException | IOException | WriterException e) {
 				reply.add(new TextMessage("およ？およよ？"));
 			}
 
+		} else if ("@time".equals(args[0])) {
+			reply.add(new TextMessage("えへへ、どうぞです♪"));
+			try {
+				ZonedDateTime now = ZonedDateTime.now(ZoneId.of(args[1]));
+				reply.add(new TextMessage(now.format(DateTimeFormatter.ofPattern("MM/dd HH:mm"))));
+
+			} catch (ArrayIndexOutOfBoundsException | DateTimeException e) {
+				StringBuffer sb = new StringBuffer("利用可能なタイムゾーンの一覧です！")
+						.append(System.getProperty("line.separator"))
+						.append("https://git.io/vyqDP");
+				reply.add(new TextMessage(sb.toString()));
+			}
+
 		} else if ("@wol".equals(args[0])) {
 			reply.add(new TextMessage("はい、睦月が用意するね！"));
-
 			try{
 				String url = URLEncoder.encode(args[1], "UTF-8");
 				reply.add(new TextMessage("http://www.wolframalpha.com/input/?i=" + url));
@@ -127,11 +143,9 @@ public class CallBackApplication {
 
 		BufferedImage image = MatrixToImageWriter.toBufferedImage(bitMatrix);
 
-		StringBuffer fileName = new StringBuffer("/tmp/");
-		fileName.append(id);
-		fileName.append(".jpg");
-		ImageIO.write(image, "JPEG", new File(fileName.toString()));  // tmpフォルダ以下に出力
+		String fileName = new StringBuffer("/tmp/").append(id).append(".jpg").toString();
+		ImageIO.write(image, "JPEG", new File(fileName));  // tmpフォルダ以下に出力
 
-		return fileName.toString();
+		return fileName;
 	}
 }

@@ -14,9 +14,11 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 
+
 @RestController
 @RequestMapping("/tmp")
 public class ReturnImage {
+
 
 	@RequestMapping(value="/{id}", method=RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 	public ResponseEntity<byte[]> hello(@PathVariable String id) {
