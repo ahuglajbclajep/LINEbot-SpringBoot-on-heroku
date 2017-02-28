@@ -10,13 +10,12 @@ buildscript {
 	}
 }
 
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
-
-jar {
-	baseName = 'mutukibot'
-	version = '0.0.1'
-}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

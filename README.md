@@ -21,7 +21,7 @@ heroku上で動くLINEのbotアカウントの中身
 ## Examples Of Command
 ### @qr [string]
 ```
-@qr https://github.com/ahuglajbclajep/LINEbot-on-heroku
+@qr https://github.com/ahuglajbclajep/LINEbot-SpringBoot-on-heroku
 ```
 QRコードを生成する  
 他のコマンドで作ったURLを共有するのにも使える
