@@ -54,5 +54,5 @@ QRコードを生成する
 4. Push to the branch  
 5. Create new Pull Request
 
-## Licence
+## License
 [Apache-2.0](LICENSE)
